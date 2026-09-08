@@ -88,6 +88,14 @@ certificates  postman-proxy-ca.crt  postman-proxy-ca.key
 ```bash
 sudo pip3 install mitmproxy2swagger
 ```
+```
+┌──(kali㉿kali)-[~/Downloads]
+└─$ python3 -m venv ~/mitm_env && source ~/mitm_env/bin/activate
+```
+```┌──(mitm_env)─(kali㉿kali)-[~/Downloads]
+└─$ sudo pip3 install mitmproxy2swagger --break-system-packages --ignore-installed asgiref
+```
+```
 
 # **Install Git**
 
