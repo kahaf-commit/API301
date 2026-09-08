@@ -70,6 +70,19 @@ sudo tar -xvzf postman-linux-x64.tar.gz -C /opt
 sudo ln -s /opt/Postman/Postman /usr/bin/postman
 ```
 
+# **Install Certificate on Postman Itself**
+
+```┌──(kali㉿kali)-[~]
+└─$ # Generate a self-signed CA certificate
+openssl req -x509 -newkey rsa:4096 -keyout ca-key.pem -out ca-cert.pem -days 365 -nodes
+```
+# **Install Certificate for Postman  on Mozila**
+
+```
+┌──(kali㉿kali)-[~/.config/Postman/proxy]
+└─$ ls      
+certificates  postman-proxy-ca.crt  postman-proxy-ca.key
+```
 # **Install mitmproxy2swagger**
 
 ```bash
@@ -145,6 +158,12 @@ sudo apt install seclists
     ```
     
     If you encounter installation issues, consider using the development version available on GitHub or APIsec’s hosted instance.
+    
+    If any Problem on opening
+    
+    ```
+    sudo docker rm -f $(sudo docker ps -a -q)
+    ```
     
 
 ---
@@ -311,6 +330,7 @@ mkdir labs
 sudo curl -o docker-compose.yml https://raw.githubusercontent.com/OWASP/crAPI/main/deploy/docker/docker-compose.yml
 sudo docker-compose pull
 sudo docker-compose -f docker-compose.yml --compatibility up -d
+
 ```
 
 Then open Firefox to access the app.
